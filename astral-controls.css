@@ -1,0 +1,47 @@
+/* Shared astral action language. Text remains real, selectable and accessible. */
+:is(.actions .button,.focus-evidence>a,.scholar-link,.paper .dossier-button,.paper>a,.more-papers article>a,.dossier-content>a,.copy,footer>a,.contact .email){
+  --action-ink:#d6e9d8;
+  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:13px;
+  min-height:46px;max-width:100%;padding:11px 22px;color:var(--action-ink);
+  border:1px solid #b8d9c065;border-radius:2px 15px 2px 15px;
+  background:linear-gradient(115deg,#9ddbc318,#152a37cc 55%,#071520e8);
+  box-shadow:inset 0 0 0 3px #080e1b,inset 0 0 0 4px #b6d3be20,0 5px 16px #0002;
+  font:600 17px/1.25 Rajdhani,Inter,sans-serif;letter-spacing:.5px;text-decoration:none;
+  transition:border-color .25s,box-shadow .25s,background .25s,transform .25s;
+}
+:is(.actions .button,.focus-evidence>a,.scholar-link,.paper .dossier-button,.paper>a,.more-papers article>a,.dossier-content>a,.copy,footer>a,.contact .email)::before{
+  content:'';flex:none;width:9px;height:9px;border:1px solid currentColor;transform:rotate(45deg);
+  background:radial-gradient(circle,#e6eccd 0 1px,transparent 2px);box-shadow:0 0 0 3px #b7d9bd0d;
+}
+:is(.actions .button,.focus-evidence>a,.scholar-link,.paper .dossier-button,.paper>a,.more-papers article>a,.dossier-content>a,.copy,footer>a,.contact .email)::after{
+  content:'↗';position:static;inset:auto;flex:none;width:auto;height:auto;margin-left:7px;
+  transform:none;background:none;color:#d5c696;font:18px/1 Inter,sans-serif;transition:transform .25s;
+}
+:is(.actions .button,.focus-evidence>a,.scholar-link,.paper .dossier-button,.paper>a,.more-papers article>a,.dossier-content>a,.copy,footer>a,.contact .email):hover{
+  border-color:#d9e8b5;box-shadow:inset 0 0 0 3px #0b1922,inset 0 0 0 4px #cee6bd55,0 0 25px #a4ecd522;
+  background:linear-gradient(115deg,#a8dbc536,#1a3546 65%,#0c202a);transform:translateY(-2px);color:#f0f2d7;
+}
+:is(.actions .button,.focus-evidence>a,.scholar-link,.paper .dossier-button,.paper>a,.more-papers article>a,.dossier-content>a,.copy,footer>a,.contact .email):hover::after{transform:translate(2px,-2px)}
+:is(a,button):focus-visible{outline:2px solid #e3d1a0;outline-offset:5px}
+.actions .primary{--action-ink:#172624;background:linear-gradient(115deg,#eef0cc,#b5d7c2);border-color:#e4edbf;box-shadow:inset 0 0 0 3px #d5e4c6,inset 0 0 0 4px #314b4150,4px 4px 0 #bce2c01c}
+.actions .primary::after{color:#314f43}.actions .primary:hover{color:#142920;background:linear-gradient(115deg,#ffffdf,#d4efd8)}
+.paper>a>span{display:none}.dossiers-ready .paper>a{display:none}
+.paper .dossier-button{overflow:visible;animation:none}.paper .dossier-button::after{animation:none!important}
+.focus-evidence>a{align-self:start;margin-top:18px}.publication-top{gap:20px}.scholar-link{font-size:15px}
+.contact .email{font-family:Rajdhani,Inter,sans-serif;font-size:clamp(16px,2.4vw,26px);letter-spacing:.25px;overflow-wrap:anywhere}
+.copy{margin-top:12px}.copy::after{content:'+'}footer>a{font-size:14px;min-height:40px;padding:8px 15px}
+.form-controls>div{border-radius:2px 14px 2px 14px;box-shadow:0 0 25px #9fd9c11a;border-color:#b8d9c080}
+.form-controls .form-auto{border-left:1px solid #bcd7bd33;font-size:10px;letter-spacing:.2px;padding:11px 13px;color:#d6e5bc;white-space:nowrap}
+.form-auto:disabled{opacity:.5;cursor:default}.form-controls button[aria-pressed=true]{background:linear-gradient(110deg,#b9d9b833,#8cdcc711)}
+.hero-art:not(.sam-art),.hero-art.sam-art{transition:opacity 1.4s ease-in-out,transform .7s ease-out}
+@media(max-width:700px){
+  .form-controls button{padding:11px 12px}.form-controls strong{margin-left:6px}.form-controls .form-auto{padding:11px 10px}
+  .scholar-link{font-size:14px;padding:10px 14px}.contact .email{gap:9px;padding:12px 13px}
+  .contact .email::after{margin-left:0}.publication-top{align-items:flex-start}.actions .button{font-size:16px}
+}
+.reduced-motion .hero-art{transition:none!important}
+.reduced-motion :is(.button,.dossier-button,.copy,a){transition:none!important;transform:none}
+@media(prefers-reduced-motion:reduce){.hero-art{transition:none!important}:is(.button,.dossier-button,.copy,a){transition:none!important}}
+
+.copy.copy::after{content:"+"}
+@media(max-width:700px){.hero .actions{display:flex;flex-direction:column;align-items:stretch;gap:12px;max-width:300px}.hero .actions .button{width:100%;justify-content:flex-start;white-space:nowrap}.hero .actions .button::after{margin-left:auto}}

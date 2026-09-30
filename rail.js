@@ -35,11 +35,38 @@
     dialog.addEventListener('close',()=>document.body.classList.remove('dialog-open'));
   }
 })();
-// Character art is decorative; native buttons expose the selected appearance.
-document.querySelectorAll('[data-form]').forEach(button=>{
-  if(button.tagName!=='BUTTON')return;
-  button.addEventListener('click',()=>{
-    document.querySelector('.hero').dataset.form=button.dataset.form;
-    document.querySelectorAll('button[data-form]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));
-  });
-});
+// Decorative character cycle pauses offscreen, in background, and with reduced motion.
+(() => {
+  const hero=document.querySelector('.hero');
+  const buttons=[...document.querySelectorAll('button[data-form]')];
+  const toggle=document.querySelector('.form-auto');
+  const controls=document.querySelector('.form-controls');
+  const media=matchMedia('(prefers-reduced-motion: reduce)');
+  let automatic=true,visible=false,timer=0,focused=false,hovered=false;
+  const reduced=()=>document.documentElement.classList.contains('reduced-motion')||media.matches;
+  function select(form){
+    hero.dataset.form=form;
+    buttons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.form===form)));
+  }
+  function sync(){
+    clearTimeout(timer);
+    const enabled=automatic&&!reduced();
+    toggle.textContent=reduced()?'Auto · off':automatic?'Auto · on':'Auto · off';
+    toggle.setAttribute('aria-pressed',String(enabled));
+    toggle.setAttribute('aria-label',enabled?'Pause automatic character switching':'Resume automatic character switching');
+    toggle.disabled=reduced();
+    if(!enabled||!visible||document.hidden||focused||hovered)return;
+    timer=setTimeout(()=>{select(hero.dataset.form==='sam'?'firefly':'sam');sync()},7000);
+  }
+  buttons.forEach(button=>button.addEventListener('click',()=>{select(button.dataset.form);sync()}));
+  toggle.addEventListener('click',()=>{automatic=!automatic;sync()});
+  controls.addEventListener('focusin',()=>{focused=true;sync()});
+  controls.addEventListener('focusout',event=>{if(!controls.contains(event.relatedTarget)){focused=false;sync()}});
+  controls.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse'){hovered=true;sync()}});
+  controls.addEventListener('pointerleave',()=>{hovered=false;sync()});
+  new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;sync()},{threshold:0}).observe(hero);
+  let wasReduced=reduced();
+  new MutationObserver(()=>{if(wasReduced!==reduced()){wasReduced=reduced();sync()}}).observe(document.documentElement,{attributes:true,attributeFilter:['class']});
+  document.addEventListener('visibilitychange',sync);media.addEventListener('change',sync);
+  select('firefly');sync();
+})();
