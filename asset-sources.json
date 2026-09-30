@@ -1,0 +1,89 @@
+{
+  "icml": {
+    "file": "icml.svg",
+    "source": "https://icml.cc/Conferences/2026/Press",
+    "asset": "https://icml.cc/media/Press/ICML-logo.svg"
+  },
+  "cvpr2026": {
+    "file": "cvpr-2026-logo.png",
+    "source": "https://fmv-cvpr26workshop.github.io/",
+    "asset": "https://fmv-cvpr26workshop.github.io/assets/img/cvpr-logo.jpg"
+  },
+  "bytedance": {
+    "file": "bytedance.svg",
+    "source": "https://www.bytedance.com/en/",
+    "asset": "Original inline SVG from official homepage"
+  },
+  "league-of-legends": {
+    "file": "league-of-legends.jpg",
+    "source": "https://www.leagueoflegends.com/en-us/champions/ahri/",
+    "asset": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_0.jpg"
+  },
+  "teamfight-tactics": {
+    "file": "teamfight-tactics.jpg",
+    "source": "https://teamfighttactics.leagueoflegends.com/en-sg/news/game-updates/magic-n-mayhem-overview/",
+    "asset": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/c54b1a7f8da415c56734d2d5db3d524cda1a5e4f-1280x720.jpg"
+  },
+  "honkai-star-rail": {
+    "file": "honkai-star-rail.png",
+    "source": "https://wiki.hoyolab.com/pc/hsr/entry/8?lang=en-us",
+    "asset": "https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2024/09/12/119725280/931eeb14ca7337a883a2b755ac6efc85_5238745356796205977.png",
+    "note": "Game promotional artwork hosted on a HoYoWiki community entry"
+  },
+  "hithink-royalflush": {
+    "file": "hithink-royalflush.png",
+    "source": "https://www.hithink.com/",
+    "asset": "https://www.hithink.com/uploads/9/2/5/3/92538946/royal-flush-2.png",
+    "note": "Official corporate English logo"
+  },
+  "ifind-white": {
+    "file": "ifind-white.svg",
+    "source": "https://www.51ifind.com/",
+    "asset": "https://s.thsi.cn/cd/ifind-51ifind/www/css/jgbweb/index.ee06a3fe.css",
+    "note": "Official iFinD product wordmark extracted byte-for-byte from embedded data URI in official stylesheet"
+  },
+  "elsevier": {
+    "file": "elsevier.svg",
+    "source": "https://www.elsevier.com",
+    "asset": "https://www.elsevier.com/images/elsevier-logo-orange.svg"
+  },
+  "oxford-university-press": {
+    "file": "oxford-university-press.png",
+    "source": "https://corp.oup.com/",
+    "asset": "https://corp.oup.com/wp-content/uploads/2023/08/OUP-full-logo-RGB-White-block.png",
+    "publisher_verification": "https://academic.oup.com/molecular-omics/pages/author-guidelines"
+  },
+  "uibe": {
+    "file": "uibe.png",
+    "source": "https://www.uibe.edu.cn/index.htm",
+    "asset": "https://www.uibe.edu.cn/2025/images/logo.png?260902"
+  },
+  "suibe": {
+    "file": "suibe.png",
+    "source": "https://www.suibe.edu.cn/",
+    "asset": "https://www.suibe.edu.cn/_upload/tpl/05/88/1416/template1416/images/logo.png"
+  },
+  "anime-hero": {
+    "file": "anime-hero.jpg",
+    "source": "AI-generated original concept illustration",
+    "note": "Decorative fictional adult explorer in a celestial observatory; not a portrait of the site owner."
+  },
+  "black-swan-hero": {
+    "file": "black-swan-hero.jpg",
+    "source": "https://www.youtube.com/watch?v=JruxFQurUDQ",
+    "asset": "https://i.ytimg.com/vi/JruxFQurUDQ/maxresdefault.jpg",
+    "note": "Official Honkai: Star Rail Black Swan trailer thumbnail. Unmodified source, responsive CSS crop."
+  },
+  "firefly-hero": {
+    "file": "firefly-hero.jpg",
+    "source": "https://www.youtube.com/watch?v=eFXQqY3ia6k",
+    "asset": "https://i.ytimg.com/vi/eFXQqY3ia6k/maxresdefault.jpg",
+    "note": "Official Firefly trailer thumbnail; responsive crop."
+  },
+  "sam-hero": {
+    "file": "sam-hero.jpg",
+    "source": "https://x.com/honkaistarrail/status/1755819120598417508",
+    "asset": "https://pbs.twimg.com/media/GF3sLYnXsAEok8j.jpg?name=orig",
+    "note": "Official SAM dossier artwork; responsive crop."
+  }
+}
