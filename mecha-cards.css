@@ -1,0 +1,39 @@
+/* A single assembly sequence, then a quiet locked frame. */
+.mecha-card{isolation:isolate;--armor:#bdebd9;--armor-gold:#dfd0a5}
+.experience-card.mecha-card{transform:none!important}
+.mecha-shell{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden;contain:strict;border-radius:inherit}
+.armor-plate{position:absolute;width:78px;height:33px;opacity:0;transition:transform .48s cubic-bezier(.18,.85,.25,1),opacity .28s;
+ background:linear-gradient(135deg,#c7efd626,#bce2d108 65%);border-top:2px solid var(--armor);border-left:2px solid var(--armor);
+ clip-path:polygon(0 0,100% 0,calc(100% - 12px) 9px,13px 9px,9px 13px,9px 100%,0 100%);filter:drop-shadow(0 0 5px #b1e3ca40)}
+.armor-tl{top:6px;left:6px;transform:translate(-24px,-16px)}
+.armor-tr{top:6px;right:6px;transform:translate(24px,-16px) rotateY(180deg);transition-delay:55ms}
+.armor-bl{bottom:6px;left:6px;transform:translate(-24px,16px) rotateX(180deg);transition-delay:90ms}
+.armor-br{bottom:6px;right:6px;transform:translate(24px,16px) rotate(180deg);transition-delay:130ms}
+.armor-frame{position:absolute;inset:12px;border:1px solid #c4e8d52c;clip-path:polygon(0 0,28% 0,28% 1px,1px 1px,1px 100%,0 100%,0 0,100% 0,100% 100%,72% 100%,72% calc(100% - 1px),calc(100% - 1px) calc(100% - 1px),calc(100% - 1px) 0);opacity:0;transform:scale(.985);transition:opacity .4s .15s,transform .45s .12s}
+.armor-scan{position:absolute;top:0;bottom:0;width:20%;left:0;opacity:0;background:linear-gradient(90deg,transparent,#a8e6d10b 70%,#c8f2d626 99%,transparent);border-right:1px solid #d9efd344;transform:translateX(-110%) skewX(-12deg)}
+.armor-circuit{position:absolute;left:50%;bottom:6px;width:94px;height:3px;transform:translateX(-50%) scaleX(0);transform-origin:center;background:repeating-linear-gradient(90deg,var(--armor-gold) 0 10px,transparent 10px 15px);opacity:0;transition:transform .35s .28s,opacity .3s .25s}
+.armor-core{position:absolute;right:17px;top:50%;width:4px;height:22px;background:linear-gradient(transparent,var(--armor-gold),transparent);opacity:0;transform:scaleY(0);transition:opacity .4s .2s,transform .45s .2s}
+@media(hover:hover) and (pointer:fine){
+ .mecha-card:hover{border-color:#bdebd985;box-shadow:0 16px 45px #0004,inset 0 0 28px #a5ddc509,0 0 20px #b0ecd00b}
+ .mecha-card:hover .armor-tl{transform:translate(0,0)}
+ .mecha-card:hover .armor-tr{transform:translate(0,0) rotateY(180deg)}
+ .mecha-card:hover .armor-bl{transform:translate(0,0) rotateX(180deg)}
+ .mecha-card:hover .armor-br{transform:translate(0,0) rotate(180deg)}
+ .mecha-card:hover .armor-plate,.mecha-card:hover .armor-frame{opacity:1}
+ .mecha-card:hover .armor-frame{transform:scale(1)}
+ .mecha-card:hover .armor-circuit{opacity:.65;transform:translateX(-50%) scaleX(1)}
+ .mecha-card:hover .armor-core{opacity:.65;transform:scaleY(1)}
+ .mecha-card:hover .armor-scan{animation:armor-assemble-scan 1s cubic-bezier(.2,.6,.4,1) .12s both}
+ .research-records .mecha-card:hover:after{animation:none;opacity:0}
+}
+.mecha-card:focus-within{border-color:#bdebd985}
+.mecha-card:focus-within .armor-plate,.mecha-card:focus-within .armor-frame{opacity:1}
+.mecha-card:focus-within .armor-tl{transform:translate(0,0)}
+.mecha-card:focus-within .armor-tr{transform:rotateY(180deg)}
+.mecha-card:focus-within .armor-bl{transform:rotateX(180deg)}
+.mecha-card:focus-within .armor-br{transform:rotate(180deg)}
+.mecha-card:focus-within .armor-frame{transform:scale(1)}
+@keyframes armor-assemble-scan{0%{transform:translateX(-110%) skewX(-12deg);opacity:0}18%{opacity:.8}75%{opacity:.65}100%{transform:translateX(610%) skewX(-12deg);opacity:0}}
+.reduced-motion .mecha-shell{display:none}
+@media(prefers-reduced-motion:reduce){.mecha-shell{display:none}}
+@media(hover:none){.mecha-shell{display:none}}
