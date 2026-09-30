@@ -1,0 +1,14 @@
+#meteor-field{position:fixed;inset:0;width:100%;height:100%;z-index:4;pointer-events:none;contain:strict;opacity:.9}
+/* Low-contrast aurora curtains travel behind the reading surface. */
+.ambient-nebula::after{content:'';position:absolute;inset:-20%;background:conic-gradient(from 210deg at 80% 20%,transparent 0deg,#84dbbf10 15deg,transparent 30deg,#92a6f40c 40deg,transparent 55deg);filter:blur(28px);transform-origin:80% 20%;animation:aurora-curtain 34s ease-in-out infinite alternate}
+.chapter-ornament i{position:relative;text-shadow:0 0 15px #bfecc550;animation:chapter-glimmer 7s ease-in-out infinite}
+.chapter-ornament span{position:relative;overflow:hidden}
+.chapter-ornament span::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,#d5ecc0b0,transparent);transform:translateX(-110%);animation:chapter-trail 9s ease-in-out infinite}
+.chapter-ornament span:last-child::after{animation-delay:3s;animation-direction:reverse}
+.form-controls{transition:filter 1s}.hero[data-form=sam] .form-controls{filter:drop-shadow(0 0 12px #92e3cd20)}
+@keyframes aurora-curtain{from{transform:rotate(-9deg) scale(1);opacity:.45}to{transform:rotate(9deg) scale(1.12);opacity:.95}}
+@keyframes chapter-glimmer{0%,100%{filter:drop-shadow(0 0 2px #aad8c140);opacity:.65}50%{filter:drop-shadow(0 0 8px #cceac780);opacity:1}}
+@keyframes chapter-trail{0%,35%{transform:translateX(-110%)}75%,100%{transform:translateX(110%)}}
+.reduced-motion #meteor-field{display:none}.reduced-motion .ambient-nebula::after,.reduced-motion .chapter-ornament i,.reduced-motion .chapter-ornament span::after{animation:none}.reduced-motion .chapter-ornament span::after{display:none}
+@media(prefers-reduced-motion:reduce){#meteor-field{display:none}.ambient-nebula::after,.chapter-ornament i,.chapter-ornament span::after{animation:none}.chapter-ornament span::after{display:none}}
+@media(max-width:700px){#meteor-field{opacity:.7}.ambient-nebula::after{filter:none;opacity:.4}}
