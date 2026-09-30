@@ -1,0 +1,36 @@
+/* Academic records: institutional identity, discipline, and chronology. */
+.education{scroll-margin-top:32px}
+.education .school-list{grid-template-columns:1fr;gap:24px}
+.education .academic-card{display:grid;grid-template-columns:minmax(240px,.85fr) minmax(0,1.7fr);padding:0;border-radius:0;overflow:hidden;border-color:#b9d7d530;background:radial-gradient(420px circle at var(--glow-x,-420px) var(--glow-y,0px),#9ce2d511,transparent 80%),linear-gradient(120deg,#13212b,#0b1523 80%);transition:border-color .35s,box-shadow .35s,transform .5s}
+.education .academic-card:hover{border-color:#bce4d170;box-shadow:0 18px 65px #00000030}
+.academic-card:before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,#cde7c4,#97bdbb33,transparent);pointer-events:none}
+.education .academic-card:after{width:24px;height:24px;right:12px;top:12px;border-color:#dce4bb70}
+.school-identity{padding:32px;border-right:1px solid #bed5d220;background:linear-gradient(150deg,#c2e4d308,transparent);position:relative}
+.school-insignia{height:66px;display:flex;align-items:center;margin-bottom:30px}
+.education .school-logo{width:250px;max-width:100%;height:auto;margin:0}
+.school-code{display:flex;align-items:center;gap:14px;font:13px var(--type-mono);letter-spacing:1.5px;color:#d7e7c7;margin-bottom:13px}
+.school-code span{color:#80949d;font-size:12px;letter-spacing:0}
+.education .academic-card h4{min-height:0;font-size:20px;line-height:1.45;letter-spacing:-.3px;font-weight:450;margin:0;max-width:29ch;text-wrap:pretty;color:#eef1e9}
+.academic-distinction{display:inline-flex;gap:10px;align-items:center;margin-top:24px;font-size:13px;color:#bfcdc9}
+.academic-distinction:before{content:'✧';color:#d0cf9e;font-size:18px}
+.academic-record{padding:32px 34px;min-width:0}
+.faculty{padding-bottom:25px;border-bottom:1px solid #bcd1dc24}
+.record-label,.degree-label{display:block;font:12px var(--type-mono);letter-spacing:.8px;text-transform:uppercase;color:#93b8b3}
+.faculty p{font-size:17px;line-height:1.6;color:#d7e2e3;margin:9px 0 0;text-wrap:pretty}
+.study-path{padding-left:19px;margin-top:27px;position:relative}
+.study-path:before{content:'';position:absolute;top:7px;bottom:12px;left:3px;width:1px;background:linear-gradient(#bfdbbd80,#9ecbd52b)}
+.study-stage{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 96px;gap:25px}
+.study-stage:before{content:'';position:absolute;top:4px;left:-19px;width:7px;height:7px;transform:rotate(45deg);border:1px solid #d9e5bc;background:#172733;box-shadow:0 0 14px #c5efcb25}
+.study-stage+.study-stage{margin-top:29px;padding-top:25px;border-top:1px solid #c4d6df18}
+.study-stage+.study-stage:before{top:29px}
+.degree-label{font-size:12px;line-height:1.6;color:#c9d2af;letter-spacing:.3px}
+.study-main h5{font-size:19px;font-weight:450;line-height:1.5;letter-spacing:-.25px;color:#edf0ed;margin:8px 0 0;text-wrap:pretty}
+.study-main .study-detail{font-size:14px;line-height:1.7;color:#93a9b9;margin:10px 0 0}
+.study-period{display:flex;flex-direction:column;align-items:flex-end;font:13px/1.6 var(--type-mono);color:#bfccd2;white-space:nowrap;padding-top:1px}
+.study-period>span[aria-hidden]{font-size:12px;line-height:1.25;color:#647f8d}
+.study-period .expected{font-family:var(--type-mono);font-size:12px;line-height:1.5;letter-spacing:0;color:#d3d9b6;background:#cbdba40c;border:1px solid #d3dab82c;padding:2px 7px;margin-top:9px}
+@media(min-width:701px){.education .academic-card{transform:perspective(1800px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg))}}
+@media(max-width:1000px){.education .academic-card{grid-template-columns:minmax(220px,.8fr) minmax(0,1.3fr)}.school-identity{padding:26px}.academic-record{padding:26px}.study-stage{gap:16px;grid-template-columns:minmax(0,1fr) 88px}.study-main h5{font-size:18px}}
+@media(max-width:700px){.education .academic-card{display:block;transform:none}.school-identity{border-right:0;border-bottom:1px solid #bed5d220;padding:25px}.school-insignia{height:52px;margin-bottom:24px}.education .school-logo{width:235px}.education .academic-card h4{font-size:20px;max-width:30ch}.academic-distinction{margin-top:15px}.academic-record{padding:25px}.faculty{padding-bottom:20px}.faculty p{font-size:16px}.study-path{margin-top:23px}.study-stage{display:flex;flex-direction:column;gap:13px}.study-period{flex-direction:row;align-items:center;flex-wrap:wrap;gap:9px;font-size:12px;padding:0}.study-period .expected{margin:0;padding:1px 6px}.study-main h5{font-size:18px}.study-stage+.study-stage{margin-top:24px;padding-top:22px}.study-stage+.study-stage:before{top:26px}.study-main .study-detail{font-size:14px}.education .school-list{gap:20px}}
+.reduced-motion .education .academic-card{transform:none;transition:none}
+@media(prefers-reduced-motion:reduce){.education .academic-card{transform:none;transition:none}}
