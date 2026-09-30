@@ -1,0 +1,35 @@
+.experience-list{display:grid;gap:25px}
+.experience-card{display:grid;grid-template-columns:minmax(230px,.8fr) minmax(0,1.8fr);position:relative;overflow:hidden;border:1px solid #bed8d32c;border-radius:0;background:radial-gradient(440px circle at var(--glow-x,-440px) var(--glow-y,0px),#a7e5d515,transparent 80%),linear-gradient(120deg,#13212c,#0b1423 85%);transition:border-color .35s,box-shadow .35s,transform .5s}
+.experience-card:hover{border-color:#bedecb77;box-shadow:0 20px 65px #0004}
+.experience-card:before{content:'';position:absolute;top:0;left:0;bottom:0;width:2px;background:linear-gradient(#d1e7be,#a4cdca44,transparent);pointer-events:none}
+.experience-card:after{border-color:#dce4bb70}
+.exp-identity{padding:30px;border-right:1px solid #bed5d220;background:linear-gradient(145deg,#c9e8d30a,transparent);min-width:0}
+.exp-logo{height:53px;display:flex;align-items:center;margin-bottom:26px}
+.exp-logo>img{width:152px;height:auto;max-width:100%}
+.exp-logo-panel{display:inline-flex;padding:9px 12px;background:#f1f3f0;border:1px solid #d4ddd3;border-radius:2px}
+.exp-logo-panel img{width:160px;height:auto;max-width:100%}
+.organization-wordmark{font:600 27px var(--type-display);color:#d7e2d3;letter-spacing:.06em}
+.exp-index{display:block;font:12px var(--type-mono);letter-spacing:.075em;color:#8daaa9;margin-bottom:14px}
+.exp-company{font:600 27px/1.2 var(--type-heading);color:#e4ece3;letter-spacing:.005em;margin:0;text-wrap:pretty}
+#experience-cdgdc .exp-company{font-size:22px;line-height:1.25}
+.exp-team{font-size:15px;line-height:1.65;color:#a4b8c3;margin:13px 0 0;text-wrap:pretty}
+.exp-product{display:block;width:66px;height:auto;margin-top:22px;opacity:.8}
+.exp-body{padding:31px 34px;min-width:0}
+.exp-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:25px;padding-bottom:24px;border-bottom:1px solid #bdd6d322}
+.exp-label{display:block;font:12px/1.6 var(--type-mono);letter-spacing:.05em;text-transform:uppercase;color:#a5c4bc}
+.exp-heading h4{font:600 27px/1.2 var(--type-heading);letter-spacing:.015em;color:#e8eeea;margin:8px 0 0;text-wrap:pretty}
+.exp-date{display:flex;align-items:center;gap:8px;white-space:nowrap;font:12px/1.6 var(--type-mono);color:#b5c8d1;padding-top:3px;font-variant-numeric:tabular-nums}
+.exp-date>span{color:#64838b}
+.exp-focus{font:600 29px/1.2 var(--type-heading);letter-spacing:.005em;color:#d7e7c5;margin:25px 0 22px;text-wrap:pretty}
+.exp-work-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.exp-work{position:relative;padding-left:16px;border-left:1px solid #8fc7c740}
+.exp-work:before{content:'';position:absolute;left:-3px;top:7px;width:5px;height:5px;transform:rotate(45deg);background:#12222b;border:1px solid #c3daba}
+.exp-work p{font-size:16px;line-height:1.75;color:#aabcca;margin:10px 0 0}
+.exp-work .exp-label{font-size:12px;letter-spacing:.015em;color:#d2d7ba}
+.exp-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;padding-top:20px;border-top:1px solid #bad4da18}
+.exp-tags span{font:12px/1.6 var(--type-mono);color:#a9c6cd;border:1px solid #a0c6cd25;padding:5px 10px;background:#adced005}
+@media(min-width:701px){.experience-card{transform:perspective(1800px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg))}}
+@media(max-width:1050px){.experience-card{grid-template-columns:minmax(210px,.8fr) minmax(0,1.5fr)}.exp-identity{padding:26px}.exp-body{padding:26px}.exp-heading{display:block}.exp-date{margin-top:13px}.exp-work-grid{gap:22px}.exp-focus{font-size:27px}}
+@media(max-width:700px){.experience-list{gap:22px}.experience-card{display:block;transform:none}.exp-identity{padding:25px;border-right:0;border-bottom:1px solid #bed5d220}.exp-logo{height:45px;margin-bottom:20px}.exp-index{margin-bottom:10px}.exp-company{font-size:27px}.exp-team{margin-top:9px}.exp-body{padding:25px}.exp-heading{padding-bottom:21px}.exp-heading h4{font-size:26px}.exp-date{font-size:12px;gap:8px}.exp-focus{font-size:27px;margin:23px 0}.exp-work-grid{grid-template-columns:1fr;gap:22px}.exp-work p{font-size:16px;line-height:1.75}.exp-tags{gap:7px;margin-top:24px;padding-top:20px}.exp-tags span{font-size:12px;padding:4px 8px}.exp-product{margin-top:16px}}
+.reduced-motion .experience-card{transform:none!important;transition:none}
+@media(prefers-reduced-motion:reduce){.experience-card{transform:none!important;transition:none}}
